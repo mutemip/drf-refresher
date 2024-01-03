@@ -1,5 +1,5 @@
 """
-WSGI config for profiles project.
+WSGI config for bookAPI project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'profiles.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bookAPI.settings')
 
 application = get_wsgi_application()
