@@ -2,14 +2,14 @@ from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.generics import get_object_or_404
 from .models import Ebook, Review
-from api.serializers import EbookSerializer, ReviewSerializer
+from bookAPP.api.serializers import EbookSerializer, ReviewSerializer
 
 # Create your views here.
 class EbookListCreateAPIView(generics.ListCreateAPIView):
     queryset = Ebook.objects.all()
     serializer_class = EbookSerializer
 
-class EbookDetailView(generics.RetrieveUpdateDeleteAPIView):
+class EbookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ebook.objects.all()
     serializer_class = EbookSerializer
 
@@ -23,6 +23,6 @@ class ReviewCreateAPIView(generics.CreateAPIView):
         serializer.save(ebook=ebook)
 
 
-class ReviewDetailView(generics.RetrieveUpdateDeleteAPIView):
+class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
